@@ -37,9 +37,11 @@ class List {
         else lastNode.next = node;
     }
 
-    // TODO add first
-    addToHead(){
-
+    // // TODO add first
+    addToHead(value){
+        let node = new Node(value);
+        node.next = this.head;
+        this.head = node;
     }
 
     // TODO add at key
@@ -70,6 +72,7 @@ list.addToEnd(9)
 list.addToEnd(3)
 list.addToEnd(8)
 list.addToEnd(2)
+list.addToHead(12)
 
 list.displayList();
 // console.log(list.getLastNode());
