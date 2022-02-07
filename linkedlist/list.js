@@ -45,7 +45,22 @@ class List {
     }
 
     // TODO add at key
-    addAt(value,position){
+    addAt(position,value){
+
+        if (this.head === null || position == 1) {this.addToHead(value);return;}
+
+        let current = this.head;
+        let node = new Node(value);
+        let i = 2,tmp = null;
+
+        while(i<position && current.next != null){
+            current = current.next;
+            i++;
+        }
+
+        tmp = current.next;
+        current.next = node;
+        node.next = tmp;
 
     }
 
@@ -72,13 +87,12 @@ class List {
 // n2.next = n3;
 
 let list = new List();
-// list.addToEnd(9)
-// list.addToEnd(3)
-// list.addToEnd(8)
-// list.addToEnd(2)
+list.addToEnd(9)
+list.addToEnd(3)
+list.addToEnd(8)
+list.addToEnd(2)
 list.addToHead(12)
-list.addToHead(92)
-list.addToHead(64)
+list.addAt(3,44)
 
 list.displayList();
 // console.log(list.getLastNode());
