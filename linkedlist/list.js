@@ -64,7 +64,7 @@ class List {
 
     }
 
-    // TODO remove last
+    // // TODO remove last
     removeLast(){
         let current = this.head;
 
@@ -74,7 +74,13 @@ class List {
 
         return tmp; // ?! Ammm node mazal fi lmemory
     }
+
     // TODO remove first
+    removeFirst(){
+        let tmp = this.head;
+        this.head = tmp.next;
+        return tmp;
+    }
     // TODO remove at key
     // TODO size
     // TODO get first 
@@ -98,5 +104,6 @@ list.addToHead(12)
 list.addAt(3,44)
 
 list.removeLast();
+list.removeFirst();
 
 list.displayList();
