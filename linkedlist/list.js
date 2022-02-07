@@ -44,7 +44,7 @@ class List {
         this.head = node;
     }
 
-    // TODO add at key
+    // // TODO add at key
     addAt(position,value){
 
         if (this.head === null || position == 1) {this.addToHead(value);return;}
@@ -65,6 +65,15 @@ class List {
     }
 
     // TODO remove last
+    removeLast(){
+        let current = this.head;
+
+        while(current.next.next != null) current = current.next;
+        let tmp = current.next;
+        current.next = null;
+
+        return tmp; // ?! Ammm node mazal fi lmemory
+    }
     // TODO remove first
     // TODO remove at key
     // TODO size
@@ -78,22 +87,16 @@ class List {
     
 }
 
-// let n1 = new Node(3);
-// let n2 = new Node(7);
-// let n3 = new Node(4);
-// console.log(n1.data);
-
-// n1.next = n2;
-// n2.next = n3;
-
 let list = new List();
+
 list.addToEnd(9)
 list.addToEnd(3)
 list.addToEnd(8)
 list.addToEnd(2)
+
 list.addToHead(12)
 list.addAt(3,44)
 
-list.displayList();
-// console.log(list.getLastNode());
+list.removeLast();
 
+list.displayList();
