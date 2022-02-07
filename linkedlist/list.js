@@ -22,17 +22,19 @@ class List {
     // // TODO get last node
     getLastNode(){
         let current = this.head;
+        if(current == null) return this.head;
         while(current){
-            current = current.next;
             if (current.next == null) return current;
+            current = current.next;
         }
     }
 
     // // TODO add last
-    addEnd(value){
+    addToEnd(value){
         let node = new Node(value);
         let lastNode = this.getLastNode();
-        lastNode.next = node;
+        if(lastNode == null) this.head = node;
+        else lastNode.next = node;
     }
 
     // TODO add first
@@ -55,17 +57,20 @@ class List {
     
 }
 
-let n1 = new Node(3);
-let n2 = new Node(7);
-let n3 = new Node(4);
+// let n1 = new Node(3);
+// let n2 = new Node(7);
+// let n3 = new Node(4);
 // console.log(n1.data);
 
-n1.next = n2;
-n2.next = n3;
+// n1.next = n2;
+// n2.next = n3;
 
-// let list = new List();
-// list.addEnd(9)
+let list = new List();
+list.addToEnd(9)
+list.addToEnd(3)
+list.addToEnd(8)
+list.addToEnd(2)
 
-// // list.displayList();
+list.displayList();
 // console.log(list.getLastNode());
 
