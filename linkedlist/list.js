@@ -45,6 +45,10 @@ class List {
     }
 
     // TODO add at key
+    addAt(value,position){
+
+    }
+
     // TODO remove last
     // TODO remove first
     // TODO remove at key
@@ -68,11 +72,13 @@ class List {
 // n2.next = n3;
 
 let list = new List();
-list.addToEnd(9)
-list.addToEnd(3)
-list.addToEnd(8)
-list.addToEnd(2)
+// list.addToEnd(9)
+// list.addToEnd(3)
+// list.addToEnd(8)
+// list.addToEnd(2)
 list.addToHead(12)
+list.addToHead(92)
+list.addToHead(64)
 
 list.displayList();
 // console.log(list.getLastNode());
