@@ -72,7 +72,7 @@ class List {
         let tmp = current.next;
         current.next = null;
 
-        return tmp; // ?! Ammm node mazal fi lmemory
+        return tmp;
     }
 
     // // TODO remove first
@@ -96,7 +96,26 @@ class List {
         this.head = prev;
     }
     
-    // TODO remove at key
+    // // TODO remove at key
+    removeAt(position){
+        let current = this.head;
+        let prev = null;
+        let i = 1;
+        
+        if (current.next == null || position == 1) {
+            this.removeFirst();
+            return;
+        }
+
+        while(i<position && current != null){
+            prev = current;
+            current = current.next;
+            i++;
+        }
+
+        prev.next = current.next;
+    }
+
     // TODO size
     // TODO get first 
     // TODO get at
@@ -117,12 +136,8 @@ list.addToEnd(2)
 list.addToHead(12)
 list.addAt(3,44)
 
-list.removeLast();
-list.removeFirst();
-
+list.displayList();
+list.removeAt(5);
+console.log('-----------');
 list.displayList();
 
-console.log('Reversed');
-
-list.reverse();
-list.displayList();
